@@ -1,0 +1,36 @@
+<<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+      #div1{
+      	width: 200px;
+      	height: 200px;
+      	background: yellow;
+      	position: absolute;
+      }
+       #div2{
+        width: 200px;
+        height: 200px;
+        background: blue;
+        position: absolute;
+      }
+	</style>
+  <script type="text/javascript" src="Drag.js"></script>
+  <script type="text/javascript" src="LimitDrag.js"></script>
+	<script type="text/javascript">
+
+  window.onload=function(){
+    new Drag('div1');
+    new LimitDrag('div2');
+  };
+
+
+	</script>
+</head>
+<body>
+<div id="div1">普通拖拽</div>
+<div id="div2">限制范围</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>div内变色</title>
+	<style type="text/css">
+	#div1{
+		width: 100px;
+		height: 100px;
+		border:1px solid #000;
+	}
+	.box{
+		background: red;
+	}
+	</style>
+	<script type="text/javascript">
+		function bianse(){
+			var odiv=document.getElementById('div1');
+			odiv.className='box';
+		}
+	</script>
+</head>
+<body>
+<input type="button" value="变红色" onclick="bianse()"></input>
+<div id="div1"></div>
+</body>
+</html>

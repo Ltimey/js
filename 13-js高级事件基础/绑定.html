@@ -1,0 +1,70 @@
+<<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+    function myAddEvent(obj,ev,fn)
+    {
+    	if (obj.attachEvent) 
+    	{
+    		obj.attachEvent('on'+ev,fn);
+    	}
+    	else{
+    		obj.addEventListener(ev,fn,false);
+    	}
+    }
+
+		window.onload=function()
+		{
+                var oBtn = document.getElementById('btn1');
+                   
+                myAddEvent(oBtn,'click',function(){
+                	alert('a')
+                });
+
+                 myAddEvent(oBtn,'click',function(){
+                	alert('b')
+                });
+               
+             
+                
+                //attachEvent(事件名，函数)
+                //IE
+                /*
+                oBtn.attachEvent('onclick' , function()
+                {
+                	alert('a');
+                });
+                 oBtn.attachEvent('onclick' , function()
+                {
+                	alert('b');
+                });
+                */
+               
+                //addEventListener(事件名，函数，false)
+               /* oBtn.addEventListener('click',function(){
+                	alert('a');
+                },false)
+                  oBtn.addEventListener('click',function(){
+                	alert('b');
+                },false)
+
+                */
+
+                /*
+                oBtn.onclick=function(){
+                	alert('a');
+                };
+                 oBtn.onclick=function(){
+                	alert('b');
+                };
+                */
+		};
+	
+	</script>
+</head>
+<body>
+<input id="btn1" type="button" value="按钮"></input>
+</body>
+</html>

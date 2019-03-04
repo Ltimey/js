@@ -1,0 +1,50 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>淡入淡出</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	#div1{
+		width: 200px;
+		height: 200px;
+		background: red;
+		opacity: 0.3;
+	}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var oDiv=document.getElementById('div1');
+		oDiv.onmouseover=function(){
+			startMove(100);
+		}
+		oDiv.onmouseout=function(){
+			startMove(30);
+		}
+	}
+	    var timer=null;
+	    var aipha=30;
+		function startMove(iTaget){
+			var oDiv=document.getElementById('div1');
+			clearInterval(timer);
+			timer=setInterval(function(){
+				var speed=0;
+				if(aipha<iTaget) {
+					speed=1;
+				}else{
+					speed=-1;
+				}
+				if(aipha==iTaget){ik
+					clearInterval(timer);
+				}else{
+                    aipha+=speed;
+                    oDiv.style.opacity=aipha/100;
+				}
+			},30)
+		}
+	</script>
+</head>
+<body>
+<div id="div1"></div>
+
+</body>
+</html>

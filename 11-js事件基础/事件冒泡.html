@@ -1,0 +1,19 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>事件冒泡</title>
+<meta charset="utf-8">
+<style type="text/css">
+	div{
+		padding:100px;
+	}
+</style>
+</head>
+<body onclick="alert('body')">
+<div style="background:#ccc;" onclick="alert(this.style.background);">
+	<div style="background:green; "onclick="alert(this.style.background);">
+		<div style="background:red; "onclick="alert(this.style.background);"></div>
+	</div>
+</div>
+</body>
+</html>

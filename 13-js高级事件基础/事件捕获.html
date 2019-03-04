@@ -1,0 +1,22 @@
+<<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		window.onload=function(){
+           var oBtn = document.getElementById('btn1');
+
+           oBtn.onclick=function()
+           {
+           	alert('a');
+           };
+
+           oBtn.setCapture();//只在IE下兼容；
+		};
+	</script>
+</head>
+<body>
+<input  id="btn1" type="button" value="按钮"></input>
+</body>
+</html>

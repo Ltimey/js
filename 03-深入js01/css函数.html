@@ -1,0 +1,23 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>css函数</title>
+	<script type="text/javascript">
+		function css(obj,name,style){
+			if(arguments.lenngth==2){
+				return obj.style[name];
+			}else{
+				obj.style[name]=style;
+			}
+		}
+		window.onload=function(){
+			var oDiv=document.getElementById('div1');
+			/**alert(css(oDiv,'width'));**/
+			css(oDiv,'background','green');
+		}
+	</script>
+</head>
+<body>
+<div id="div1" style="width: 200px; height:200px; background:red;"></div>
+</body>
+</html>

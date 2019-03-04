@@ -1,0 +1,26 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>删除元素</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var aA=document.getElementsByTagName('a');
+			var oUl=document.getElementById('ull');
+			for( var i=0;i<aA.length;i++){
+				aA[i].onclick=function(){
+                     oUl.removeChild(this.parentNode);
+                 
+				};
+			}
+		};
+	</script>
+</head>
+<body>
+<ul id="ull">
+	<li>达瓦大无大无<a href="javascript:;">删除</a></li>
+	<li>大阿瓦哇多撒<a href="javascript:;">删除</a></li>
+	<li>大娃娃撒大多<a href="javascript:;">删除</a></li>
+	<li>大大大大啊去<a href="javascript:;">删除</a></li>
+</ul>
+</body>
+</html>

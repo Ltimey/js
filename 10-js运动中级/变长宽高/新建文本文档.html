@@ -1,0 +1,39 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>运动框架</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+       #div1{
+       	width: 100px;
+       	height: 100px;
+       	background: red;
+       	opacity: 0.3;
+       }
+	</style>
+	<script src="move.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oDiv=document.getElementById('div1');
+			oDiv.onmouseover=function(){
+				stattMore(oDiv,'width',300,function(){
+					stattMore(oDiv,'height',300,function(){
+						stattMore(oDiv,'opacity', 100);
+					});
+				})
+			}
+			oDiv.onmouseout=function(){
+				stattMore(oDiv,'opacity', 30,function(){
+					stattMore(oDiv,'height',100,function(){
+						stattMore(oDiv,'width',100);
+					})
+				});
+			}
+		}
+	</script>
+</head>
+<body>
+<div id="div1"></div>
+
+</body>
+</html>

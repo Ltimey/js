@@ -1,0 +1,26 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>父节点应用</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var aA=document.getElementsByTagName('a');
+			for(var i=0;i<aA.length;i++){
+				aA[i].onclick=function(){
+					this.parentNode.style.display='none'
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+
+<ul>
+	<li>ssdsdzs<a href="javascript:;">隐藏</a></li>
+	<li>fdsfsdf<a href="javascript:;">隐藏</a></li>
+	<li>gfgsgsd<a href="javascript:;">隐藏</a></li>
+	<li>hdfhfdh<a href="javascript:;">隐藏</a></li>
+	<li>dfgdfgd<a href="javascript:;">隐藏</a></li>
+</ul>
+</body>
+</html>

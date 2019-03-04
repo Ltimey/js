@@ -1,0 +1,65 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>微博效果</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+    *{
+    	margin: 0;
+    	padding:0;
+    }
+    #ull{
+    	width: 400px;
+    	height: 400px;
+    	border: 1px solid black;
+    	margin: 10px auto;
+    	overflow: hidden;
+    }
+    #ull li{
+    	border-bottom:1px #999 dashed;
+    	padding:4px;
+    	list-style: none;
+    	overflow: hidden;
+    	opacity: 0;
+    }
+	</style>
+	<script src="move2.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oBtn=document.getElementById('btn1');
+			var oTxt=document.getElementById('txt1');
+			var oUl=document.getElementById('ull');
+			oBtn.onclick=function(){
+				var oLi=document.createElement('li');
+				oLi.innerHTML=oTxt.value;
+				oTxt.value='';
+                if (oUl.children.length>0) { 
+				oUl.insertBefore(oLi,oUl.children[0]);} 
+				else{
+					oUl.appendChild(oLi);
+				}
+				//运动
+				var iHeight=oLi.offsetHeight;
+
+				oLi.offsetHeight='0';
+
+				stattMore(oLi,{height:iHeight},function(){
+                  stattMore(oLi,{opacity:100})
+				});
+
+				//alert(iHeight)
+				
+				
+
+			}
+		}
+	</script>
+</head>
+<body>
+<textarea id="txt1"rows="4" cols="40"></textarea>
+<input id="btn1" type="button" value="发布"></input>
+<ul id="ull">
+	
+</ul>
+</body>
+</html>

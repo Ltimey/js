@@ -1,0 +1,27 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>原型</title>
+</head>
+<script type="text/javascript">
+	var arr1=new Array(12,15,48,68,45,484);
+	var arr2=new Array(12,15,48);
+
+    Array.prototype.sum=function()  //class原型
+ 
+    	//arrl.sum=function()    //行间样式
+	{
+		var result = 0;
+		for(var i= 0;i<this.length;i++){
+			result+=this[i];
+		}
+		return result;
+	};
+    
+    alert(arr1.sum());
+    alert(arr2.sum());
+</script>
+<body>
+
+</body>
+</html>

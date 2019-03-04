@@ -1,0 +1,79 @@
+<html>
+<head>
+	<title>变宽变高</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+    div{
+    	width: 200px;
+    	height: 200px;
+    	margin: 20px;
+    	float: left;
+    	background: yellow;
+    	border:10px solid black;
+    	font-size: 14px;
+    	
+    }
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var aDiv1=document.getElementById('div1');
+		aDiv1.onmouseover=function(){
+			stattMore(this,'height',400);
+		};
+		aDiv1.onmouseout=function(){
+			stattMore(this,'height',200);
+		};
+		var aDiv2=document.getElementById('div2');
+		aDiv2.onmouseover=function(){
+			stattMore(this,'width',400);
+		};
+		aDiv2.onmouseout=function(){
+			stattMore(this,'width',200);
+		};	
+		var aDiv3=document.getElementById('div3');
+		aDiv3.onmouseover=function(){
+			stattMore(this,'fontSize',50);
+		};
+		aDiv3.onmouseout=function(){
+			stattMore(this,'fontSize',14);
+		};	
+		var aDiv4=document.getElementById('div4');
+		aDiv4.onmouseover=function(){
+			stattMore(this,'borderWidth',100);
+		};
+		aDiv4.onmouseout=function(){
+			stattMore(this,'borderWidth',10);
+		};	
+	}
+	//var alpha=30;
+	function getStyle(obj,name){
+    	if(obj.currentStyle){
+    		return obj.currentStyle[name];
+    	}else{
+    		return getComputedStyle(obj,false)[name];
+    	};
+
+    }
+		function stattMore(obj,attr,iTarget){
+			clearInterval(obj.timer);
+			obj.timer=setInterval(function(){
+				var cur=parseInt(getStyle(obj,attr));
+				var speed=(iTarget-cur)/6;
+				speed=speed>0?Math.ceil(speed):Math.floor(speed);
+				if (cur==iTarget) {
+					clearInterval(obj.timer);
+				}else{
+					obj.style[attr]=cur+speed+'px';
+				}
+			},30)
+		}
+		
+	</script>
+</head>
+<body>
+<div id="div1">变高</div>
+<div id="div2">变宽</div>
+<div id="div3">fontSize</div>
+<div id="div4">borderWidth</div>
+</body>
+</html>

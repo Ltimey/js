@@ -1,0 +1,42 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>右侧悬浮框</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+       #div1{
+       	width: 100px;
+       	height: 150px;
+       	background: red;
+       	position: absolute;
+       	right: 0px;
+       	bottom: 0px;
+       	       }
+	</style>
+	<script type="text/javascript">
+		window.onscroll=function(){
+			var oDiv=document.getElementById('div1');
+			var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+			//oDiv.style.top=document.documentElement.clientHeight-oDiv.offsetHeight+scrollTop+'px';
+		abc(parseInt(document.documentElement.clientHeight-oDiv.offsetHeight)/2+scrollTop);
+		};
+		var timer=null;
+		function abc(iTarget){
+		      var oDiv=document.getElementById('div1');
+		      clearInterval(timer);
+		      timer=setInterval(function(){
+		      	var speed=(iTarget-oDiv.offsetTop)/4;
+		      	speed=speed>0?Math.ceil(speed):Math.floor(speed);
+		      	if (oDiv.offset==iTarget) {
+		      		clearhInterval(timer);
+		      	}else{
+		      		oDiv.style.top=oDiv.offsetTop+speed+'px';
+		      	}
+		      },30)
+		}
+	</script>
+</head>
+<body style="height: 2000px">
+<div id="div1"></div>
+</body>
+</html>

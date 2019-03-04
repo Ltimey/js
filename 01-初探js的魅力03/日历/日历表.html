@@ -1,0 +1,54 @@
+<<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>rili</title>
+	<link rel="stylesheet" type="text/css" href="rili.css">
+	<script type="text/javascript">
+		window.onload=function()
+		{
+        var oDiv=document.getElementById('top');
+
+        var aLi=oDiv.getElementsByTagName('li');
+        var oTxt=oDiv.getElementsByClassName('neirong')[0];
+
+         for(var i=0;i<aLi.length;i++){
+
+         	aLi[i].index=i;
+         	aLi[i].onmouseover=function()
+         	{
+         	  for(var i=0;i<aLi.length;i++){
+              aLi[i].className="";
+         		};
+         		this.className='active';
+         		oTxt.innerHTML='<h2>'+(this.index+1)+'月活动</h2><p>带娃话费了付货款萨芬娜可服务覅咖喱时间阿卡丽发哈UI发噶福建阿网络科技</p>';
+         	};
+         }
+         
+		};
+	</script>
+</head>
+<body>
+<div id="top">   
+	<ul>
+		<li class="active"><h2>1</h2><p>DAS</p></li>
+		<li><h2>2</h2><p>FDS</p></li>
+		<li><h2>3</h2><p>XVX</p></li>
+		<li><h2>4</h2><p>JKH</p></li>
+		<li><h2>5</h2><p>FGH</p></li>
+		<li><h2>6</h2><p>EED</p></li>
+		<li><h2>7</h2><p>NHY</p></li>
+		<li><h2>8</h2><p>FGH</p></li>
+		<li><h2>9</h2><p>KJH</p></li>
+		<li><h2>10</h2><p>ASD</p></li>
+		<li><h2>11</h2><p>SXC</p></li>
+		<li><h2>12</h2><p>CDS</p></li>		
+	</ul>
+	
+	<div class ="neirong">
+	  <h2>1月活动</h2>
+	  <p>带娃话费了付货款萨芬娜可服务覅咖喱时间阿卡丽发哈UI发噶福建阿网络科技</p>
+</div>
+</div>
+</body>
+</html>

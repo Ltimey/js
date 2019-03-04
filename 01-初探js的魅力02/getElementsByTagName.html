@@ -1,0 +1,39 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>getElementsTagName</title>
+	<style type="text/css">
+    div{
+    	width: 200px;
+    	height: 200px;
+    	margin: 10px;
+    	border: 1px solid black;
+    	float: left;
+    }
+	</style>
+	<script type="text/javascript">
+		window.onload=function (){
+			var odiv=document.getElementsByTagName('div');
+            for(var i=0;i<odiv.length;i++){
+            	odiv[i].style.background='red';
+            }   
+
+			/*odiv[0].style.background='red';
+			odiv[1].style.background='red';
+			odiv[2].style.background='red';
+			odiv[3].style.background='red';*/
+
+		};
+	</script>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

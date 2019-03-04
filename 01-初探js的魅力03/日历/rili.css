@@ -1,0 +1,33 @@
+#top{
+	width: 300px;
+	height: 570px;
+	border:1px solid black;
+	margin-left: 700px;
+	background: #ddd;
+}
+#top ul li.active{
+	background: yellow;
+}
+
+#top ul li{
+     text-align: center;
+     width: 70px;
+     height: 70px;
+     background: black;
+     color: white;
+     float: left;
+     border: 1px solid black;
+     margin-left: 4px;
+     margin-bottom: 10px;
+     list-style: none;
+}
+#top ul li p{
+	margin-top: -20px;
+}
+.neirong{
+	width: 270px;
+	height: 150px;
+	margin-left: 12px;
+    margin-top: 375px;
+	background: yellow;
+}

@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>任意值运动框架</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+    div{
+        width: 200px;
+        height: 200px;
+        margin: 20px;
+        float: left;
+        background: yellow;
+        border:10px solid black;
+        font-size: 14px;
+        opacity: 0.3;
+        
+    }
+    </style>
+    <script type="text/javascript">
+    window.onload=function(){
+        var aDiv1=document.getElementById('div1');
+        aDiv1.onmouseover=function(){
+            stattMore(this,'opacity',100);
+        };
+        aDiv1.onmouseout=function(){
+            stattMore(this,'opacity',30);
+        };
+       
+    }
+    //var alpha=30;
+    function getStyle(obj,name){
+        if(obj.currentStyle){
+            return obj.currentStyle[name];
+        }else{
+            return getComputedStyle(obj,false)[name];
+        };
+
+    }
+        function stattMore(obj,attr,iTarget){
+            clearInterval(obj.timer);
+            obj.timer=setInterval(function(){
+                var cur=0;
+                if (attr=='opacity') {
+                     cur=Math.round(parseFloat(getStyle(obj,attr))*100);
+                }else{
+                    cur=parseInt(getStyle(obj,attr));
+                }
+                var speed=(iTarget-cur)/6;
+                speed=speed>0?Math.ceil(speed):Math.floor(speed);
+                if (cur==iTarget) {
+                    clearInterval(obj.timer);
+                }else{
+                    if (attr=='opacity') {
+                        obj.style.opacity=(cur+speed)/100;
+                        document.getElementById('txt1').value=obj.style.opacity;
+
+                    }else{
+                        obj.style[attr]=cur+speed+'px';
+                    }
+                    
+                }
+            },30)
+        }
+        
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+<input type="text" id="txt1"></input>
+</body>
+</html>

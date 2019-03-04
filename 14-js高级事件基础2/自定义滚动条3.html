@@ -1,0 +1,123 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>自定义滚动条</title>
+	<style type="text/css">
+    #parent{
+    	width: 600px;
+    	height: 20px;
+    	background: #ccc;
+    	position: relative;
+    	margin: 10px auto;
+    }
+    #div1{
+    	width:20px;
+    	height: 20px;
+    	background: red;
+    	position: absolute;
+    	left: 0;
+    	top: 0; 
+    }
+   #div2{
+    width: 400px;
+    height: 300px;
+    border: 1px solid black;
+    overflow: -hidden;
+    position: relative;
+
+   }
+   #div3{
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 4px;
+   }
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+			var oDiv =document.getElementById('div1');
+			var oDiv2 =document.getElementById('div2');
+      var oDiv3 =document.getElementById('div3');
+			var oParent =document.getElementById('parent');
+
+			var disX=0;
+			var disY=0;
+
+			oDiv.onmousedown=function(ev){
+				var oEvent =ev||event;
+
+               disX=oEvent.clientX-oDiv.offsetLeft;
+              
+           
+             document.onmousemove=function(ev){
+				var oEvent =ev||event;
+				var l =oEvent.clientX-disX;
+
+				if (l<0) {
+					l=0
+				}else if(l>oParent.offsetWidth-oDiv.offsetWidth){
+                           l=oParent.offsetWidth;
+				}
+
+               oDiv.style.left = l+'px';
+               
+               
+               var scale =l/(oParent.offsetWidth-oDiv.offsetWidth)
+               document.title=scale;
+
+               oDiv3.style.top=scale*(oDiv3.offsetHeight-oDiv2.offsetHeight)+'px';
+               
+			};
+             document.onmouseup=function(){
+                  document.onmousemove=null;
+                  document.onmouseup=null;
+                  
+              };
+
+              return false;
+			};
+		
+		}
+	</script>
+</head>
+<body>
+<div id="parent">
+	<div id="div1"></div>
+</div>
+<div id="div2">
+  <div id="div3">
+    header:页面或页面中某一个区块的页眉，通常是一些引导和导航信息。
+
+nav:可以作为页面导航的链接组
+
+section:页面中的一个内容区块，通常由内容及其标题组成
+
+article:代表一个独立的、完整的相关内容块，可独立于页面其它内容使用
+
+aside:非正文的内容，与页面的主要内容是分开的，被删除而不会影响到网页的内容
+
+footer:页面或页面中某一个区块的脚注
+
+.font-size:字体大小，font-family:"黑体"----设定字体样式,font-weight:字体粗细
+上面的示例中，给一段文字加了不同的边框，只是为了说明边框线的颜色、粗细是可变的。
+　　第一个边框的CSS代码是：style="border:thin solid red"；
+　“border”后面的三个参数的含义是：边框线的宽度是：thin（细线）；边框线的类型：solid（实线）；边框线的颜色：red（红色）。
+　　边框线的宽度有三个标准值：thin（细线）、medium（中粗线）和thick（粗线），
+　　此外，也可以自定义宽度，如：1pt、5px、2cm等。
+　　边框线的类型有九个确定值：none（无边框线）、 dotted（由点组成的虚线）、 dashed（由短线组成的虚线）、 solid（实线）、 double（双线，双线宽度加上它们之间的空白部分的宽度就等于border-width定义的宽度）、 groove（3D沟槽状的边框）、 ridge（3D脊状的边框）、 inset（3D内嵌边框，颜色较深）、 outset（3D外嵌边框，颜色较浅），
+
+　　注意：如果系统不支持这些边框的属性值，那么“dotted”、“dashed”、“double”、“groove”、“ridge”、“inset”和“outset”都会被“solid”代替。
+　　边框线的颜色：可以用十六进制的颜色代码，如#00ffcc。
+　　从上面可以看出，给文本加边框确实很简单，上例中后面那几个边框的设置，我不讲你也明白了吧！在这里告诉你一点小技巧，给一段文本加边框，可把CSS加在〈P〉标记里；给几段文本加边框，先把那几段文本用DIV标记括起来，再把CSS加在〈DIV〉标记里；若是要给一行文本加几个不同的边框，则需要把文本放在表格里，再把CSS分别加到〈TD〉标记里。
+ 
+
+　　2、在一个边框中采用不同宽度和颜色的边框线
+　　在本例中的效果，当然可以用上例中的方法来实现，但那样代码过多，可采用另一种合并的方法，把四条边的属性值分类放在一起，如本例的代码是这样的： 
+　　style="border-style:solid; border-width: thin thin thick thick;border-color:#00ff00 #00ff00 #0000ff #0000ff" 。
+　　从上面可以看出，我把边框线的类型、宽度和颜色归类在一起定义了，这里请注意几点：
+　　一、四条边框线的位置顺序是：上边框线、右边框线、下边框线、左边框线；
+　　二、我在本例中边框线的类型只取了一种实线类型，实际上四条边也可以分别定义不同的类
+  </div>
+</div>
+</body>
+</html>

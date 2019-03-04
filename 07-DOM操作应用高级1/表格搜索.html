@@ -1,0 +1,74 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>表格搜索</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		window.onload=function(){
+			var oTab=document.getElementById('tab1');
+			var oBtn=document.getElementById('btn1');
+			var oTxt=document.getElementById('name');
+
+			oBtn.onclick=function(){
+				for (var i = 0; i < oTab.tBodies[0].rows.length; i++) {
+					var sTab=oTab.tBodies[0].rows[i].cells[1].innerHTML.toLowerCase();
+					var sTxt=oTxt.value.toLowerCase();
+					var arr=sTxt.split('');
+					oTab.tBodies[0].rows[i].style.background='';
+					for (var j = 0; j< arr.length; j++) {
+						if (sTab.search(arr[j])!=-1) {
+						oTab.tBodies[0].rows[i].style.background='yellow';
+					}
+						
+					}
+									
+			}
+		}
+	}
+	</script>
+</head>
+<body>
+姓名：<input id="name" type="text"></input>
+<input id="btn1" type="button" value="搜索"></input>
+<table id="tab1" border="1px"width="500px">
+	<thead>
+		<td>ID</td>
+		<td>姓名</td>
+		<td>年龄</td>
+		<td>操作</td>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>张三</td>
+			<td>25</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>李四</td>
+			<td>26</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>王二</td>
+			<td>27</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>麻子</td>
+			<td>28</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>Blue</td>
+			<td>29</td>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>

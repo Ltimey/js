@@ -1,0 +1,26 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>div参数变色</title>
+	<style type="text/css">
+     #div1{
+     	width: 100px;
+     	height: 100px;
+     	background: red;
+     }
+	</style>
+    <script type="text/javascript">
+    	function getcolor(color){
+    		var odiv=document.getElementById('div1');
+    		odiv.style.background=color;
+
+    	}
+    </script>
+</head>
+<body>
+<input type="button" value="变黄" onclick="getcolor('yellow');"></input>
+<input type="button" value="变黑" onclick="getcolor('black');"></input>
+<input type="button" value="变绿" onclick="getcolor('blue');"></input>
+<div id="div1"></div>
+</body>
+</html>

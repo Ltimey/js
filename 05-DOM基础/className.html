@@ -1,0 +1,26 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oUl= document.getElementById('ull');
+			var oLi= oUl.getElementsByTagName('li');
+			for(var i=0;i<oLi.length;i++){
+				if (oLi[i].className=='a1') {
+					oLi[i].style.background='red';
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+<ul id="ull">
+	<li class="a1"></li>
+	<li class="a1"></li>
+	<li></li>
+	<li></li>
+	<li class="a1"></li>
+</ul>
+</body>
+</html>

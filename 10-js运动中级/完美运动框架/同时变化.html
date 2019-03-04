@@ -1,0 +1,34 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>123</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+    #div1{
+    	width: 100px;
+    	height: 100px;
+    	background: red;
+    	opacity: 0.3;
+
+    }
+	</style>
+	<script src="move2.js"></script>
+	<script type="text/javascript">
+	window.onload=function(){
+		var oDiv1 =document.getElementById('div1');
+		var oBtn  =document.getElementById('btn1');
+		oBtn.onclick=function(){
+			stattMore(oDiv1,{width:101,height:300,opacity:100},function(){
+				alert('a');
+			});
+		}
+	}
+		
+	</script>
+	
+</head>
+<body>
+<input id="btn1" type="button" value="运动"></input>
+<div id="div1"></div>
+</body>
+</html>
